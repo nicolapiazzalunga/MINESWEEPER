@@ -221,7 +221,6 @@ class MinesweeperAI():
 
         # Add known mines from the new sentence to the knowledge base
         sentence_known_mines = new_sentence.known_mines()
-        print("sentence_known_mines", sentence_known_mines)
         if sentence_known_mines:
             for cell in sentence_known_mines.copy():
                 self.mark_mine(cell)
@@ -282,7 +281,6 @@ class MinesweeperAI():
                 i = random.randint(0, self.height - 1)
                 j = random.randint(0, self.width - 1)
                 if (i, j) not in self.moves_made and (i, j) not in self.mines:
-                    print((i, j))
                     return (i, j)
         else:
             return None
